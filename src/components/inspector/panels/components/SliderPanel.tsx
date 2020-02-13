@@ -15,18 +15,18 @@ import NumberControl from '../../controls/NumberControl'
 const SliderPanel = () => {
   const { setValue, setValueFromEvent } = useForm()
   const size = usePropsSelector('size')
-  const value = usePropsSelector('value')
+  const defaultValue = usePropsSelector('defaultValue')
 
   return (
     <>
       <FormControl label="Value">
         <Slider
-          onChange={value => setValue('value', value)}
+          onChange={defaultValue => setValue('defaultValue', defaultValue)}
           min={0}
           max={100}
           step={1}
-          defaultValue={value}
-          value={value}
+          defaultValue={defaultValue}
+          value={defaultValue}
         >
           <SliderTrack />
           <SliderFilledTrack />
